@@ -9,48 +9,43 @@
 </head>
 
 <body>
-    <div id=wraper>
-        <div id="clock">
-            <span class="clock"></span> <span class="colon">:</span> <span class="clock"></span>
-        </div>
 
-        <div id="drums">
-            <div data-key="65" class="drum">
-                <p class="letter">A</p>
-                <p class="name">CLAP</p>
-            </div>
-            <div data-key="83" class="drum">
-                <p class="letter">S</p>
-                <p class="name">HIHAT</p>
-            </div>
-            <div data-key="68" class="drum">
-                <p class="letter">D</p>
-                <p class="name">KICK</p>
-            </div>
-            <div data-key="70" class="drum">
-                <p class="letter">F</p>
-                <p class="name">OPENHAT</p>
-            </div>
-            <div data-key="71" class="drum">
-                <p class="letter">G</p>
-                <p class="name">BOOM</p>
-            </div>
-            <div data-key="72" class="drum">
-                <p class="letter">H</p>
-                <p class="name">RIDE</p>
-            </div>
-            <div data-key="74" class="drum">
-                <p class="letter">J</p>
-                <p class="name">SNARE</p>
-            </div>
-            <div data-key="75" class="drum">
-                <p class="letter">K</p>
-                <p class="name">TOM</p>
-            </div>
-            <div data-key="76" class="drum">
-                <p class="letter">L</p>
-                <p class="name">TINK</p>
-            </div>
+    <div id="drums">
+        <div data-key="65" class="drum">
+            <p class="letter">A</p>
+            <p class="name">CLAP</p>
+        </div>
+        <div data-key="83" class="drum">
+            <p class="letter">S</p>
+            <p class="name">HIHAT</p>
+        </div>
+        <div data-key="68" class="drum">
+            <p class="letter">D</p>
+            <p class="name">KICK</p>
+        </div>
+        <div data-key="70" class="drum">
+            <p class="letter">F</p>
+            <p class="name">OPENHAT</p>
+        </div>
+        <div data-key="71" class="drum">
+            <p class="letter">G</p>
+            <p class="name">BOOM</p>
+        </div>
+        <div data-key="72" class="drum">
+            <p class="letter">H</p>
+            <p class="name">RIDE</p>
+        </div>
+        <div data-key="74" class="drum">
+            <p class="letter">J</p>
+            <p class="name">SNARE</p>
+        </div>
+        <div data-key="75" class="drum">
+            <p class="letter">K</p>
+            <p class="name">TOM</p>
+        </div>
+        <div data-key="76" class="drum">
+            <p class="letter">L</p>
+            <p class="name">TINK</p>
         </div>
     </div>
 
@@ -65,9 +60,9 @@
     <audio data-key="76" type="text/wav" src="sounds/tink.wav"></audio>
 
 </body>
+
 <script type="text/javascript">
     //  Drum kit    //
-
 
     document.addEventListener("keydown", function(e) {
 
@@ -106,36 +101,6 @@
         }
     }
     window.onClick();
-
-
-    //  Clock   //
-
-
-    function makeCklock() {
-        let clock = new Date;
-        let min = clock.getMinutes();
-        if (min < 10) {
-            min = "0" + min;
-        }
-        let hours = clock.getHours();
-        if (hours < 10) {
-            hours = "0" + hours;
-        }
-
-        let fields = document.querySelectorAll(".clock");
-        fields[0].innerHTML = hours;
-        fields[1].innerHTML = min;
-        colon();
-    }
-
-    function colon() {
-        var x = document.querySelector(".colon");
-        x.classList.add("visible")
-        x.addEventListener("transitionend", function(e) {
-            x.classList.remove("visible")
-        })
-    }
-    setInterval(makeCklock, 1000);
 </script>
 
 </html>
